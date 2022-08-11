@@ -1,0 +1,28 @@
+engineering:
+  id: 26543b34-b642-461d-9947-5de0574eaf36
+  name: Engineering
+  active: true
+  short-code: ENG
+  parent-org: ceo
+  manager-uid: ssmith
+  contact-methods:
+    jira: ENG
+    slack: team-engineering
+    email: eng@example.com
+    pagerduty: ABC1232
+  members:
+    - uid: atrujillo
+    - uid: gforbes
+      role: id
+    - uid: idavila
+      role: lead
+    - uid: jaguilar
+      role: ic
+    - uid: sdavid
+      role: ic
+ceo:
+  id: 87cedeeb-fb32-4dd9-a779-58aec43a1186
+  name: Office of the Chief Executive Officer
+  active: true
+  short-code: CEO
+  manager-uid: alice

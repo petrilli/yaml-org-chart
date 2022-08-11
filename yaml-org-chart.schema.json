@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/petrilli/yaml-org-chart/main/yaml-org-chart.schema.json",
+  "title": "Organization Structure Chart",
+  "description": "A lightweight way to represent organization structure for processing.",
+  "type": "object",
+  "patternProperties": {
+    ".*": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "description": "Unique ID, typically a UUIDv4 (optional)",
+          "type": "string"
+        },
+        "active": {
+          "description": "Current status of the organization",
+          "type": "boolean"
+        },
+        "name": {
+          "description": "Human-readable name for the organization",
+          "type": "string"
+        },
+        "short-code": {
+          "description": "Short identifier that can be used as a surrogate key",
+          "type": "string"
+        },
+        "parent-org": {
+          "description": "Parent (supervisory) organization",
+          "type": "string"
+        },
+        "manager-uid": {
+          "description": "User ID of the manager of this organization",
+          "type": "string"
+        },
+        "members": {
+          "description": "Individuals that report to this organization",
+          "type": "array",
+          "items": {
+            "description": "Information about the individual",
+            "type": "object",
+            "properties": {
+              "uid": {
+                "description": "User ID of the individual",
+                "type": "string"
+              },
+              "role": {
+                "description": "Org-specific role of the individual",
+                "type": "string"
+              }
+            },
+            "required": [
+              "uid"
+            ],
+            "uniqueItems": true
+          }
+        },
+        "contact-methods": {
+          "description": "List of contact methods for this organization",
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "name",
+        "active"
+      ]
+    }
+  }
+}

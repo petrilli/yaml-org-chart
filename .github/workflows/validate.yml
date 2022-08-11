@@ -1,0 +1,22 @@
+name: Validate
+
+on:
+  # Triggers the workflow on push or pull request events but only for the "main" branch
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: YAML file validation
+        uses: mpoc/nexus-validate-using-remote-schema-action@main
+        with:
+          api-endpoint: 'https://raw.githubusercontent.com/petrilli/yaml-org-chart/main/yaml-org-chart.schema.json'
+          yaml-file: examples/linear.yaml

@@ -1,5 +1,5 @@
 {
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$schema": "http://json-schema.org/draft/2020-12/schema",
   "$id": "https://raw.githubusercontent.com/petrilli/yaml-org-chart/main/yaml-org-chart.schema.json",
   "title": "Organization Structure Chart",
   "description": "A lightweight way to represent organization structure for processing.",

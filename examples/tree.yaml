@@ -1,0 +1,126 @@
+# A more full-fleshed org-chart
+#
+# ceo
+#   |-- hr
+#   |   `-- recruiting
+#   |-- it
+#   |   |-- helpdesk
+#   |   |-- infosec
+#   |   `-- sre
+#   |-- product
+#   `-- sales-and-marketing
+#       |-- marketing
+#       `-- sales
+ceo:
+  id: c8248b55-cd97-40e4-8183-c06562498e31
+  name: Office of the CEO
+  active: true
+  manager-uid: alice
+  contact-methods:
+    email: ceo@example.com
+  members:
+    - uid: charles
+      role: ea
+sales-and-marketing:
+  id: 19c34db0-5715-48ec-95db-b5e10d30aa01
+  name: Sales and Marketing
+  active: true
+  manager-uid: chuck
+  parent-org: ceo
+marketing:
+  id: "860b537b-5ea3-449c-9278-f070a9d91d46"
+  name: Marketing
+  active: true
+  manager-uid: rashida
+  parent-org: sales-and-marketing
+  members:
+    - uid: bente
+    - uid: marcus
+    - uid: lea
+    - uid: ramona
+sales:
+  id: "3d3bafc6-57ba-4dee-9941-2926e7d22b2e"
+  name: Sales
+  active: true
+  manager-uid: sophia
+  parent-org: sales-and-marketing
+  contact-methods:
+    email: sales@example.com
+    phone: +1 800 555 1212
+  members:
+    - uid: katheryn
+    - uid: timothy
+    - uid: mark
+    - uid: laura
+it:
+  id: d985bcae-3dab-445c-9ac9-c13205e3d825
+  name: Information Technology
+  active: true
+  manager-uid: susan
+  parent-org: ceo
+  contact-methods:
+    slack: information-tech
+    jira: IT
+product:
+  id: "4d74c8f4-05ab-47b2-8570-64296a72400d"
+  name: Product and Design
+  active: true
+  parent-org: ceo
+  contact-methods:
+    slack: building-products
+    jira: prod
+hr:
+  id: "90449d46-1e64-4864-aea5-f9b24c41ad35"
+  name: Human Resources
+  active: true
+  parent-org: ceo
+  contact-methods:
+    jira: PEOPLE
+    slack: hr
+    email: people@example.com
+recruiting:
+  id: "17c20757-009c-4aa6-8e95-15a7464fb0fe"
+  name: Recruiting
+  active: true
+  parent-org: hr
+helpdesk:
+  id: "5e0db931-1f51-4eb7-b7f3-7170187d24b3"
+  name: IT Helpdesk
+  active: true
+  manager-uid: srinivas
+  parent-org: it
+  contact-methods:
+    jira: HELP
+    slack: helpdesk
+    email: helpdesk@example.com
+sre:
+  id: "f8413114-6d97-46f4-a103-741ceac03bd5"
+  name: Site Reliability Engineering
+  active: true
+  manager-uid: elwin
+  parent-org: it
+  contact-methods:
+    jira: SRE
+    slack: sre
+    pagerduty: PANZZEQ
+infosec:
+  id: "b00eef41-59bb-4268-8fc1-3c97254960fe"
+  name: Information Security
+  active: true
+  manager-uid: michael
+  parent-org: it
+  contact-methods:
+    jira: SECURITY
+    slack: security
+    pagerduty: PRRDETR
+  members:
+    - uid: mitchell
+      role: ic
+    - uid: carol
+      role: lead
+    - uid: claire
+      role: ic
+    - uid: justin
+      role: ic
+    - uid: ryan
+      role: ic
